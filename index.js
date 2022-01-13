@@ -1,9 +1,10 @@
 const fs = require("fs");
 const express = require("express");
-
+const dotenv = require("dontenv");
+dotenv.config();
 
 const app = express();
-const port = 9000;
+const port = process.env.port;
 
 
 
