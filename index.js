@@ -1,10 +1,12 @@
 const fs = require("fs");
 const express = require("express");
-const dotenv = require("dontenv");
-dotenv.config();
+
+require('dotenv').config();
+
+console.log(process.env)
 
 const app = express();
-const port = process.env.port;
+const port = process.env.port
 
 
 
