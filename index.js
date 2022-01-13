@@ -3,12 +3,14 @@ const express = require("express");
 
 require('dotenv').config();
 
-console.log(process.env)
 
 const app = express();
-const port = process.env.port
+const port = process.env.port;
 
 
+app.get("/",(request, response)=>{
+    response.send("hello, 🌍")
+});
 
 const timeStamp = Date.now();
 const dateTime = new Date(timeStamp);
