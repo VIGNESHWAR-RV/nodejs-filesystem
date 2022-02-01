@@ -16,7 +16,15 @@ app.get("/",(request, response)=>{
     response.send("hello, 🌍")
 });
 
-// getting current timestamp
+
+
+
+
+
+//route path to perform write file function
+app.get("/getCurrentTimeInTextFile",(request, response)=>{
+
+    // getting current timestamp
 const timeStamp = Date.now();
 
 //getting data,month,year,H(hour),M(minutes),S(seconds) from timestamp
@@ -34,8 +42,6 @@ const DateAndTime = (("0"+date).slice(-2))+"/"+(("0"+month+1).slice(-2))+"/"+yea
 //path to write the file
 const path = `./backup/${timeStamp}.txt`;
 
-//route path to perform write file function
-app.get("/getCurrentTimeInTextFile",(request, response)=>{
 
     //writing file function
     fs.writeFile(path,(""+DateAndTime),(err)=>{
